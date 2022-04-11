@@ -1,0 +1,16 @@
+connect the SIMmodule7600G to RPI
+THE RPI ALREADY HAS USB drivers
+install mincom
+sudo apt install minicom
+you have to configure SIM7600 as follows
+
+ls /dev/ttyUSB*
+sudo minicom -D /dev/ttyUSB2 -b 115200
+AT+CUSBPIDSWITCH=9011,1,1
+ifconfig
+(usb0 will show up)
+sudo dhclient -v usb0
+
+
+
+
